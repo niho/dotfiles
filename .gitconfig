@@ -1,0 +1,19 @@
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[core]
+	editor = mate -w
+	autocrlf = false
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+[user]
+	name = Niklas Holmgren
+	email = niklas@sutajio.se
+[heroku]
+	account = sutajio
