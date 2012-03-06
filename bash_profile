@@ -1,4 +1,5 @@
 export VISUAL="mate -w"
+export PATH=/usr/local/sbin:$PATH
 
 # tcpdump
 alias httpdump='sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'
