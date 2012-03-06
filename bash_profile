@@ -26,3 +26,6 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias pull='git pull'
 alias deploy='git push heroku master'
 alias gh='git push heroku'
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
