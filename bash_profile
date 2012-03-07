@@ -1,8 +1,10 @@
 export VISUAL="mate -w"
 export PATH=/usr/local/sbin:$PATH
 
-# tcpdump
-alias httpdump='sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'
+# network analysis
+alias httpdump='sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'
+alias httpgrep='ngrep -W byline port 80'
+alias httpshark="tshark 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 
 # cd
 alias ..='cd ..'
