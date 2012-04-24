@@ -1,5 +1,6 @@
 export VISUAL="mate -w"
 export PATH=/usr/local/sbin:$PATH
+export NODE_PATH=/usr/local/lib/node_modules
 
 # network analysis
 alias httpdump='sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'
