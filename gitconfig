@@ -20,3 +20,5 @@
 	email = niklas@sutajio.se
 [heroku]
 	account = sutajio
+[push]
+	default = simple
