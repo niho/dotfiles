@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/niklas/Desktop/birdie'
+let g:netrw_dirhist_2='/Users/niklas/Desktop/ht'
+let g:netrw_dirhist_3='/Users/niklas/Desktop/ht/src'
+let g:netrw_dirhist_4='/Users/niklas/Desktop/ht'
+let g:netrw_dirhist_5='/Users/niklas/Desktop/ht/src'
+let g:netrw_dirhist_6='/Users/niklas/Desktop/ht'
+let g:netrw_dirhist_7='/Users/niklas/Desktop/ht/src'

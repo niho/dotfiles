@@ -100,5 +100,6 @@ set viminfo^=%
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-
+" Map <f9> to run make
+map <f9> :make<cr>
 

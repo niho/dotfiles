@@ -1,6 +1,7 @@
-export VISUAL="mate -w"
+export EDITOR="vim"
 export PATH=/usr/local/sbin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
+export PATH=$(brew --prefix ruby)/bin:$PATH
 
 # network analysis
 alias httpdump='sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'

@@ -3,7 +3,6 @@
 	diff = auto
 	status = auto
 [core]
-	editor = mate -w
 	autocrlf = false
 	whitespace = trailing-space,space-before-tab
 [apply]
