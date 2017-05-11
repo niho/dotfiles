@@ -42,3 +42,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # awscli
 complete -C aws_completer aws
+
+# docker
+eval $(docker-machine env)
