@@ -20,6 +20,7 @@ alias la='ls -A'
 
 # git
 alias gl='git log'
+alias gg='git log --graph --oneline --decorate --all'
 alias gp='git push'
 alias gpom='git push origin master'
 alias gd='git diff'
