@@ -16,8 +16,18 @@
 	lg = log -p
 [user]
 	name = Niklas Holmgren
-	email = niklas@sutajio.se
+	email = niklas.holmgren@gmail.com
+	signingkey = 67AD43F37F5DA6B8
 [heroku]
 	account = sutajio
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
