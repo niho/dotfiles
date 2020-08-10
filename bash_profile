@@ -42,4 +42,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # awscli
 complete -C aws_completer aws
+
+# ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
