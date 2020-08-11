@@ -45,3 +45,13 @@ complete -C aws_completer aws
 
 # ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# KRY
+if [ -f ~/kry/.profile ]; then
+    source ~/kry/.profile
+fi
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
