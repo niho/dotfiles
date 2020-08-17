@@ -40,6 +40,7 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>q :wq!<cr>
 
 " Turn on the WiLd menu
 set wildmenu
@@ -97,6 +98,9 @@ set wrap "Wrap lines
 
 " Enable mouse navigation
 set mouse=a
+
+" Use system clipboard
+set clipboard=unnamed
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
