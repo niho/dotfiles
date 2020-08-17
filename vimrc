@@ -7,6 +7,7 @@ Plug 'tpope/vim-fugitive'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'andys8/vim-elm-syntax'
 Plug 'leafgarland/typescript-vim'
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 " NERDTree
