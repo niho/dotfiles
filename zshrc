@@ -116,6 +116,7 @@ alias la="ls -A"
 # custom git aliases
 alias gs='git status'
 alias gl='git log'
+alias gdc='git diff --cached'
 
 # network analysis
 alias httpdump='sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'
