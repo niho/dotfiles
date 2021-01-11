@@ -18,7 +18,7 @@
 [user]
 	name = Niklas Holmgren
 	email = niklas.holmgren@gmail.com
-	signingkey = 67AD43F37F5DA6B8
+	signingkey = CF252438E9622DAC
 [heroku]
 	account = sutajio
 [push]
