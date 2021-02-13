@@ -141,3 +141,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # android
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 
+# nix
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
+
