@@ -19,6 +19,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Import Pathogen plugins
 execute pathogen#infect()
 
+" Enable spell checker
+set spell spelllang=en_us
+
 " Enable syntax highlighting
 syntax on
 
@@ -85,8 +88,12 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
+set shiftwidth=0
 set tabstop=4
+
+autocmd Filetype haskell setlocal tabstop=2
+autocmd Filetype elm setlocal tabstop=4
+autocmd Filetype java setlocal tabstop=2
 
 " Linebreak on 500 characters
 set lbr
