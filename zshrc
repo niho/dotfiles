@@ -73,12 +73,16 @@ plugins=(
     dotenv
     jenv
     aws
-    rvm
+   # rvm
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Disable shared history between terminals.
+setopt no_share_history
+unsetopt share_history
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
