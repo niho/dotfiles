@@ -17,7 +17,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(which-key lsp-mode magit docker-compose-mode dockerfile-mode projectile helm evil-visual-mark-mode markdown-mode company-ghci company-distel company flycheck-tip flycheck-elm flycheck-haskell haskell-mode jdee)))
+   '(graphql-mode gradle-mode typescript-mode treemacs-projectile treemacs-magit treemacs kubernetes kotlin-mode flycheck-dialyzer flycheck-gradle flycheck-kotlin which-key lsp-mode magit docker-compose-mode dockerfile-mode projectile helm evil-visual-mark-mode markdown-mode company-ghci company-distel company flycheck-tip flycheck-elm flycheck-haskell haskell-mode jdee)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,6 +51,8 @@
 (setq erlang-root-dir "/usr/local/Cellar/erlang/23.2.5")
 (setq exec-path (cons "/usr/local/Cellar/erlang/23.2.5/bin" exec-path))
 (require 'erlang-start)
+(require 'flycheck-dialyzer)
+(add-hook 'erlang-mode-hook 'flycheck-mode)
 
 ;; JDE (Java) Mode
 ;; (add-to-list 'load-path (format "%s/dist/jdee-2.4.1/lisp" my-jdee-path))
@@ -81,6 +83,10 @@
 ;; Which Key Mode
 (require 'which-key)
 (which-key-mode)
+
+;; macOS Dark Mode support
+(add-to-list 'load-path "~/.emacs.d/vendor/auto-dark-emacs/")
+(require 'auto-dark-emacs)
 
 (provide 'emacs)
 ;;; emacs ends here
