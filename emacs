@@ -4,6 +4,17 @@
 ;; Never use tabs, please.
 (setq-default indent-tabs-mode nil)
 
+;; Show parens mode
+(show-paren-mode 1)
+(setq-default show-paren-style 'mixed)
+(set-face-background 'show-paren-match "#aaaaaa")
+(set-face-attribute 'show-paren-match nil
+                    :weight 'bold :underline nil :overline nil :slant 'normal)
+(set-face-background 'show-paren-mismatch "red")
+(set-face-attribute 'show-paren-mismatch nil
+                    :weight 'bold :underline t :overline nil :slant 'normal)
+
+
 ;; MELPA Package Manager
 (require 'package)
 
@@ -16,8 +27,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(helm-completion-style 'emacs)
  '(package-selected-packages
-   '(graphql-mode gradle-mode typescript-mode treemacs-projectile treemacs-magit treemacs kubernetes kotlin-mode flycheck-dialyzer flycheck-gradle flycheck-kotlin which-key lsp-mode magit docker-compose-mode dockerfile-mode projectile helm evil-visual-mark-mode markdown-mode company-ghci company-distel company flycheck-tip flycheck-elm flycheck-haskell haskell-mode jdee)))
+   '(hackernews graphql-mode gradle-mode typescript-mode treemacs-projectile treemacs-magit treemacs kubernetes kotlin-mode flycheck-dialyzer flycheck-gradle flycheck-kotlin which-key lsp-mode magit docker-compose-mode dockerfile-mode projectile helm evil-visual-mark-mode markdown-mode company-ghci company-distel company flycheck-tip flycheck-elm flycheck-haskell haskell-mode jdee))
+ '(projectile-enable-caching t)
+ '(projectile-use-git-grep t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -36,7 +54,7 @@
 (projectile-mode +1)
 
 ;; Projectile projects
-(setq projectile-project-search-path '("~/jtc/" "~/hedvig/" y"~/ithaca/"))
+(setq projectile-project-search-path '("~/jtc/" "~/hedvig/" "~/ithaca/"))
 
 ;; Agda Mode
 (load-file (let ((coding-system-for-read 'utf-8))
@@ -84,9 +102,9 @@
 (require 'which-key)
 (which-key-mode)
 
-;; macOS Dark Mode support
-(add-to-list 'load-path "~/.emacs.d/vendor/auto-dark-emacs/")
-(require 'auto-dark-emacs)
+;; macOS Dark Mode support (does not seem to work)
+;;(add-to-list 'load-path "~/.emacs.d/vendor/auto-dark-emacs/")
+;;(require 'auto-dark-emacs)
 
 (provide 'emacs)
 ;;; emacs ends here
