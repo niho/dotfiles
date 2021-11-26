@@ -34,3 +34,7 @@
     program = gpg
 [includeIf "gitdir:~/kry/"]
     path = ~/kry/.gitconfig
+[includeIf "gitdir:~/hedvig/"]
+    path = ~/hedvig/.gitconfig
+[pull]
+	ff = only
