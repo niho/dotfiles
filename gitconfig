@@ -38,3 +38,9 @@
     path = ~/hedvig/.gitconfig
 [pull]
 	ff = only
+[github]
+	user = niho
+[merge]
+	tool = opendiff
+[init]
+	defaultBranch = main

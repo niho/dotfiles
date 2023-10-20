@@ -5,6 +5,12 @@
 (setq-default indent-tabs-mode nil)
 (setq-default typescript-indent-level 2)
 
+;; Disable lock files.
+(setq create-lockfiles nil)
+
+;; Disable backup files.
+(setq make-backup-files nil)
+
 ;; Show parens mode
 (show-paren-mode 1)
 (setq-default show-paren-style 'mixed)
@@ -17,6 +23,11 @@
 
 ;; Fill column mode
 (setq-default fill-column 80)
+
+;; Org mode
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
 
 
 ;; MELPA Package Manager
@@ -35,9 +46,10 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(edts-man-root "/Users/niklas/.emacs.d/edts/doc/24.1")
  '(helm-completion-style 'emacs)
  '(package-selected-packages
-   '(rjsx-mode protobuf-mode vue-mode editorconfig yasnippet dash exec-path-from-shell helm-lsp lsp-origami lsp-ui erlang hackernews graphql-mode gradle-mode typescript-mode treemacs-projectile treemacs-magit treemacs kubernetes kotlin-mode flycheck-dialyzer flycheck-gradle flycheck-kotlin which-key lsp-mode magit docker-compose-mode dockerfile-mode projectile helm evil-visual-mark-mode markdown-mode company-ghci company-distel company flycheck-tip flycheck-elm flycheck-haskell haskell-mode jdee))
+   '(pug-mode swift-mode edts tide forge rjsx-mode protobuf-mode vue-mode editorconfig yasnippet dash exec-path-from-shell helm-lsp lsp-origami lsp-ui erlang hackernews graphql-mode gradle-mode typescript-mode treemacs-projectile treemacs-magit treemacs kubernetes kotlin-mode flycheck-dialyzer flycheck-gradle flycheck-kotlin which-key lsp-mode magit docker-compose-mode dockerfile-mode projectile helm evil-visual-mark-mode markdown-mode company-ghci company flycheck-tip flycheck-elm flycheck-haskell haskell-mode jdee))
  '(projectile-enable-caching t)
  '(projectile-use-git-grep t))
 (custom-set-faces
@@ -58,10 +70,7 @@
 (require 'projectile)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(projectile-mode +1)
-
-;; Projectile projects
-(setq projectile-project-search-path '("~/jtc/" "~/hedvig/" "~/ithaca/" "~/coinlush/" "~/insurello/" "~/kry/" "~/vembla/"))
+(projectile-mode +1)p
 
 ;; Ensure your Emacs environment looks like your user's shell one
 (require 'exec-path-from-shell)
@@ -88,20 +97,18 @@
                 (shell-command-to-string "agda-mode locate")))
 
 ;; Haskell Mode
-(require 'haskell-mode)
-(define-key haskell-mode-map [f5] (lambda () (interactive) (compile "stack build --fast")))
+;(require 'haskell-mode)
+;(define-key haskell-mode-map [f5] (lambda () (interactive) (compile "stack build --fast")))
 
 ;; Erlang Mode
 (setq load-path (cons  "/usr/local/Cellar/erlang/24.0.5/lib/erlang/lib/tools-3.5/emacs" load-path))
 (setq erlang-root-dir "/usr/local/Cellar/erlang/24.0.5")
 (setq exec-path (cons "/usr/local/Cellar/erlang/24.0.5/bin" exec-path))
+;(require 'erlang)
 (require 'erlang-start)
 (require 'flycheck-dialyzer)
-(add-hook 'erlang-mode-hook 'flycheck-mode)
-
-;; Erlang
-;(require 'erlang)
 ;(add-hook 'erlang-mode-hook #'lsp)
+(add-hook 'erlang-mode-hook 'flycheck-mode)
 (add-hook 'erlang-mode-hook 'linum-mode) ;; Show line numbers
 (add-hook 'erlang-mode-hook 'column-number-mode) ;; Show column numbers
 (add-hook 'erlang-mode-hook #'display-fill-column-indicator-mode) ;; Show ruler at col 80
@@ -120,12 +127,13 @@
 (require 'flycheck-tip)
 
 ;; Company (auto-complete)
+(require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Haskell auto-complete
-(require 'company-ghci)
-(push 'company-ghci company-backend)
-(add-hook 'haskell-mode-hook 'company-mode)
+;(require 'company-ghci)
+;(push 'company-ghci company-backend)
+;(add-hook 'haskell-mode-hook 'company-mode)
 
 ;; YAML mode
 (require 'yaml-mode)
@@ -142,10 +150,6 @@
 ;; Require and enable the Yasnippet templating system
 (require 'yasnippet)
 (yas-global-mode t)
-
-;; macOS Dark Mode support (does not seem to work)
-;;(add-to-list 'load-path "~/.emacs.d/vendor/auto-dark-emacs/")
-;;(require 'auto-dark-emacs)
 
 (provide 'emacs)
 ;;; emacs ends here
